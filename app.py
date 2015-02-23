@@ -2,7 +2,7 @@
 import sys, re
 import gtk, gobject
 import webkit
-DEFAULT_URL = '/home/&USER/Escritorio/index.html' # ruta del archivo html
+DEFAULT_URL = 'url del archivo html' # ruta del archivo html
 class SimpleBrowser: # needs GTK, Python, Webkit-GTK
 	def __init__(self):
 		self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
@@ -15,20 +15,20 @@ class SimpleBrowser: # needs GTK, Python, Webkit-GTK
 		self.txt_url.connect('activate', self._txt_url_activate)
 
 		# Genero una barra de herramientas
-		toolbar = gtk.HBox(spacing=5)
-		vbox.pack_start(toolbar,False,False)
+		#toolbar = gtk.HBox(spacing=5)
+		#vbox.pack_start(toolbar,False,False)
 
 		# Agrego el boton "Atras"
-		self.btnback = gtk.Button()
-		self.btnback.add(gtk.Arrow(gtk.ARROW_LEFT,gtk.SHADOW_OUT))
-		self.btnback.connect('clicked',self._go_back)
-		toolbar.pack_start(self.btnback,False,False)
+		#self.btnback = gtk.Button()
+		#self.btnback.add(gtk.Arrow(gtk.ARROW_LEFT,gtk.SHADOW_OUT))
+		#self.btnback.connect('clicked',self._go_back)
+		#toolbar.pack_start(self.btnback,False,False)
 
 		# Agrego el boton "Adelante"
-		self.btnforward = gtk.Button()
-		self.btnforward.add(gtk.Arrow(gtk.ARROW_RIGHT,gtk.SHADOW_OUT))
-		self.btnforward.connect('clicked',self._go_forward)
-		toolbar.pack_start(self.btnforward,False,False)
+		#self.btnforward = gtk.Button()
+		#self.btnforward.add(gtk.Arrow(gtk.ARROW_RIGHT,gtk.SHADOW_OUT))
+		#self.btnforward.connect('clicked',self._go_forward)
+		#toolbar.pack_start(self.btnforward,False,False)
 
 		# Agrego el boton "Actualizar"
 		#btnrefresh = gtk.Button('Actualizar')
@@ -53,12 +53,12 @@ class SimpleBrowser: # needs GTK, Python, Webkit-GTK
 		self.window.add(vbox)
 
 		# Agrego un alinea de estado, con una etiqueta y una barra de progreso
-		self.pbar = gtk.ProgressBar()
-		self.status = gtk.Label()
-		hbox2 = gtk.HBox(False,0)
-		hbox2.pack_start(self.status,False,False)
-		hbox2.pack_end(self.pbar,False,False)
-		vbox.pack_start(hbox2,False,True)
+		#self.pbar = gtk.ProgressBar()
+		#self.status = gtk.Label()
+		#hbox2 = gtk.HBox(False,0)
+		#hbox2.pack_start(self.status,False,False)
+		#hbox2.pack_end(self.pbar,False,False)
+		#vbox.pack_start(hbox2,False,True)
 
 		# Defino las acciones a realizar segun los eventos del motor html
 		self.webview.connect('load-started',self._load_start)
